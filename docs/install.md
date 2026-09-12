@@ -30,7 +30,7 @@ This is the long form of the README's quick start. It covers a fresh machine, an
 
 ## Fresh machine
 
-Omahedron does not ship an ISO. Install NixOS the normal way, then add Omahedron to the flake.
+Omahedron does not ship an ISO **on this tag**. ADR-0025 puts an Omahedron installer in product: first `omarchy setup` on an existing NixOS, then a NixOS-shaped ISO (systemd-boot, generations — not Limine/Snapper). Until those ship, install NixOS the normal way, then add Omahedron to the flake.
 
 1. Boot the [NixOS minimal ISO](https://nixos.org/download/) and install as usual. Use UEFI with systemd-boot. If you want disk encryption, set up LUKS at this stage; Omahedron has an option to make the login flow sensible on an encrypted disk (see [Common options](#common-options)).
 2. Reboot into the new system. Make sure networking works.
@@ -144,8 +144,8 @@ Omahedron pins Hyprland from its own flake input rather than taking whatever sta
 The module registers `https://hyprland.cachix.org` (public key `hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=`) as a substituter on every rebuild after the first successful switch. On a machine that has never run the module, that registration only exists in the *next* evaluation, so pass the same cache on the command line **the first time**:
 
 ```sh
-sudo nixos-rebuild switch --flake /etc/nixos#mybox \
-  --option extra-substituters https://hyprland.cachix.org \
+sudo nixos-rebuild switch --flake /etc/nixos#mybox \\
+  --option extra-substituters https://hyprland.cachix.org \\
   --option extra-trusted-public-keys hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=
 ```
 
