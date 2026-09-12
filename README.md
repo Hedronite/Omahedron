@@ -8,7 +8,6 @@
 
 <p align="center">
   <strong>Trailing-stable Omarchy vendor port for NixOS.</strong><br>
-  Rollback by design. Official tags, documented gaps.
 </p>
 
 <p align="center">
@@ -39,8 +38,6 @@
 </p>
 
 ---
-
-**Not [henrysipp/omarchy-nix](https://github.com/henrysipp/omarchy-nix).** That repo is an early reimplementation (~797★ on GitHub); the author moved back to Arch and it is not maintained as a vendor port. **Omahedron** is a maintained fork of [zicochaos/omarchy-nix](https://github.com/zicochaos/omarchy-nix): we ship Omarchy's own desktop tree from official release tags, with ledgers, stubs, and a metal gate — not a Nix-native rice like [T00fy/omanix](https://github.com/T00fy/omanix).
 
 Omahedron is the [Omarchy](https://omarchy.org) desktop running on NixOS: Hyprland session, Quickshell bar, launcher, menus, lock screen, twenty-two stock themes with live swap, keybindings, and `omarchy-*` commands — vendored from the pinned upstream tag into the Nix store.
 
@@ -226,7 +223,7 @@ docs/                     # install, options, COMPAT, CHANNELS, UPSTREAM, COMPET
 
 Issues and pull requests are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md), which covers the validation workflow, then [AGENTS.md](AGENTS.md), [docs/COMPETE.md](docs/COMPETE.md), and [DECISIONS.md](DECISIONS.md). Two rules matter most: desktop pixels come from Omarchy, and any new upstream command gets classified in the ledger in the same change. Do not change module defaults, pins, or README claims without COMPETE.
 
-When something we fix turns out to be an Omarchy bug rather than a NixOS-ism, it goes upstream. Being a good citizen of the Omarchy community is part of the job, not a side quest.
+When something we fix turns out to be an Omarchy bug rather than a NixOS-ism, it goes upstream.
 
 ## Credits and license
 
